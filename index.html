@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I LOVE YOU Animation</title>
+  <!-- Import Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2c3e50, #fd746c, #ffb347);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      font-family: 'Dancing Script', cursive;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 10vw;
+      line-height: 1.2;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0.2em 0;
+    }
+
+    .row span {
+      display: inline-block;
+      margin: 0 0.2em;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.3s;
+      animation: float 3s ease-in-out infinite alternate;
+    }
+
+    .emoji {
+      font-family: Arial, sans-serif;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0) scale(1);
+      }
+      to {
+        transform: translateY(-15px) scale(1.05);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="text" id="text">
+    <div class="row" data-line="1">
+      <span>I</span>
+      <span class="emoji">❤️</span>
+    </div>
+    <div class="row" data-line="2">
+      <span>L</span><span>O</span><span>V</span><span>E</span>
+    </div>
+    <div class="row" data-line="3">
+      <span>Y</span><span>O</span><span>U</span>
+      <span class="emoji">❤️</span>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+  <script src="script.js"></script>
+</body>
+</html>
